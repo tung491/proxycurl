@@ -62,6 +62,7 @@ class ProxycurlBase:
         data: dict = dict(),
     ) -> Generic[T]:
         api_endpoint = f'{self.base_url}{url}'
+        print(f"Requesting {api_endpoint} with params: {params} and data: {data}")
         header_dic = {'Authorization': 'Bearer ' + self.api_key}
         backoff_in_seconds = 1
         for i in range(0, self.max_retries):
